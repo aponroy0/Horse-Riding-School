@@ -819,6 +819,9 @@
   .overflow-visible {
     overflow: visible;
   }
+  .overflow-x-hidden {
+    overflow-x: hidden;
+  }
   .rounded-2xl {
     border-radius: var(--radius-2xl);
   }
@@ -1994,6 +1997,7 @@
     font-family: var(--site-font-body);
     background-color: var(--color-white);
     color: var(--color-gray-900);
+    overflow-x: hidden;
   }
   h1,
   h2,

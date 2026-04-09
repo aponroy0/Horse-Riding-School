@@ -36,7 +36,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-5">
               <div className="w-12 h-12 rounded-full bg-highlight flex items-center justify-center shrink-0">
                 <Image
-                  src="https://api.iconify.design/mdi:horse-head.svg?color=%232C4B3B"
+                  src="/assets/Buraq_Horse_Riding_Logo.png"
                   alt="Horseno logo"
                   width={32}
                   height={32}

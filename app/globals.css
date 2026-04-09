@@ -50,6 +50,7 @@
   body {
     font-family: var(--site-font-body);
     @apply text-gray-900 bg-white;
+    overflow-x: hidden;
   }
   h1,
   h2,
