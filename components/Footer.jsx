@@ -1,4 +1,5 @@
 import { ChevronRight, Headphones, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   const quickLinks = [
@@ -28,15 +29,17 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="text-white bg-gradient-to-r from-footer-start via-footer-mid to-footer-end">
+    <footer className="text-white bg-linear-to-r from-footer-start via-footer-mid to-footer-end">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 lg:pt-20 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="w-12 h-12 rounded-full bg-highlight flex items-center justify-center shrink-0">
-                <img
+                <Image
                   src="https://api.iconify.design/mdi:horse-head.svg?color=%232C4B3B"
                   alt="Horseno logo"
+                  width={32}
+                  height={32}
                   className="w-8 h-8"
                 />
               </div>
@@ -58,7 +61,7 @@ export default function Footer() {
             <h3 className="text-[34px] sm:text-[36px] leading-none font-semibold mb-2">
               Quick Link
             </h3>
-            <div className="w-11 h-[3px] bg-highlight-soft mb-6" />
+            <div className="w-11 h-0.75 bg-highlight-soft mb-6" />
             <ul className="space-y-3.5 text-white/85 text-sm">
               {quickLinks.map((link, index) => (
                 <li key={link}>
@@ -78,7 +81,7 @@ export default function Footer() {
             <h3 className="text-[34px] sm:text-[36px] leading-none font-semibold mb-2">
               Explore
             </h3>
-            <div className="w-11 h-[3px] bg-highlight-soft mb-6" />
+            <div className="w-11 h-0.75 bg-highlight-soft mb-6" />
             <ul className="space-y-3.5 text-white/85 text-sm">
               {exploreLinks.map((link) => (
                 <li key={link}>

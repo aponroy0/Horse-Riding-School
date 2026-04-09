@@ -10,6 +10,7 @@ import {
   X,
   Youtube,
 } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const navItems = ["Home", "About", "Services", "Events", "Blog", "Contact"];
@@ -84,21 +85,22 @@ export default function Navbar() {
           )}
         >
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-              <img
-                src="https://picsum.photos/seed/horse-logo/40/40"
+          <div className="flex items-center space-x-3">
+            <div className="w-14 h-14 flex items-center justify-center">
+              <Image
+                src="/assets/Buraq_Horse_Riding_Logo.png"
                 alt="Logo"
-                className="w-8 h-8 rounded-full"
-                referrerPolicy="no-referrer"
+                width={56}
+                height={56}
+                className="w-14 h-14 object-contain"
               />
             </div>
             <div>
-              <h1 className="text-3xl md:text-[38px] leading-none font-black text-heading tracking-tight">
-                Horseno
+              <h1 className="text-3xl md:text-[28px] leading-none font-black text-heading tracking-tight pb-1">
+                Buraq
               </h1>
-              <p className="hidden sm:block text-[10px] uppercase tracking-[0.28em] text-secondary">
-                Horse Means Love
+              <p className="block text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] text-brand-dark/80 whitespace-nowrap mt-1">
+                Horse Riding School
               </p>
             </div>
           </div>

@@ -1,16 +1,19 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="relative min-h-[700px] lg:h-screen pt-28 sm:pt-32 lg:pt-0 pb-14 sm:pb-16 lg:pb-0 flex items-start lg:items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?q=80&w=2071&auto=format&fit=crop"
+        <Image
+          src="/assets/hero.jpg"
           alt="Horse Riding"
+          fill
+          sizes="100vw"
+          priority
           className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>
@@ -24,7 +27,7 @@ export default function Hero() {
               className="inline-flex items-center space-x-2 text-secondary font-medium mb-4"
             >
               <span className="w-8 h-[2px] bg-secondary" />
-              <span className="uppercase tracking-widest text-sm">
+              <span className="uppercase tracking-widest text-sm pt-4">
                 Be Ready for Your Next Ride
               </span>
             </motion.div>
@@ -45,9 +48,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-white/80 text-lg md:text-xl max-w-xl mb-10 leading-relaxed"
             >
-              At Horseno, we turn every ride into an unforgettable journey.
-              Whether you're a beginner or an experienced rider, join us to
-              explore.
+              At Buraq Horse Riding School, we make every ride powerful and
+              unforgettable, whether you’re a beginner or advancing your skills,
+              our expert trainers and well-trained horses guide your journey.
             </motion.p>
 
             <motion.div

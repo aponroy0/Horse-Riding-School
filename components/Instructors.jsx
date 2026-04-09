@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Share2, Twitter } from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const instructors = [
   {
@@ -71,11 +72,12 @@ export default function Instructors() {
               className="group relative"
             >
               <div className="relative overflow-hidden rounded-[40px] aspect-3/4">
-                <img
+                <Image
                   src={instructor.image}
                   alt={instructor.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
-                  referrerPolicy="no-referrer"
                 />
 
                 {/* Social Overlay */}

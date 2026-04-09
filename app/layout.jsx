@@ -1,9 +1,14 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Horseno - Horse Riding School",
+  title: "Buraq Horse Riding School",
   description:
-    "Discover the joy of riding at Horseno, your ultimate destination for all things equestrian.",
+    "Welcome to Buraq Horse Riding School — a place where tradition meets discipline, and passion meets excellence.",
+  icons: {
+    icon: "/assets/Buraq_Horse_Riding_Logo.png",
+    shortcut: "/assets/Buraq_Horse_Riding_Logo.png",
+    apple: "/assets/Buraq_Horse_Riding_Logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
+import Image from "next/image";
 
 const blogs = [
   {
@@ -197,14 +198,19 @@ export default function Blog() {
               style={{ transformStyle: "preserve-3d" }}
             >
               <div className="relative h-64">
-                <motion.img
-                  src={blog.image}
-                  alt={blog.title}
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
+                <motion.div
+                  className="w-full h-full"
                   whileHover={shouldReduceMotion ? undefined : { scale: 1.07 }}
                   transition={{ duration: 0.7, ease: "easeOut" }}
-                />
+                >
+                  <Image
+                    src={blog.image}
+                    alt={blog.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
 
                 {/* Date Badge */}
                 <motion.div

@@ -1,5 +1,6 @@
 import { ArrowRight, Play } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
+import Image from "next/image";
 
 export default function About() {
   const shouldReduceMotion = useReducedMotion();
@@ -62,11 +63,12 @@ export default function About() {
                 shouldReduceMotion ? undefined : { scale: 1.02, rotate: -0.35 }
               }
             >
-              <img
-                src="https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?q=80&w=1000&auto=format&fit=crop"
+              <Image
+                src="/assets/about/ab-1.png"
                 alt="Horse 1"
+                width={900}
+                height={900}
                 className="rounded-[30px] w-full aspect-square object-cover shadow-2xl"
-                referrerPolicy="no-referrer"
               />
             </motion.div>
 
@@ -104,11 +106,12 @@ export default function About() {
               }}
               className="absolute -bottom-10 right-0 w-1/2 aspect-square"
             >
-              <img
-                src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop"
+              <Image
+                src="/assets/about/ab-2.png"
                 alt="Horse 2"
+                fill
+                sizes="(max-width: 1024px) 50vw, 30vw"
                 className="rounded-[30px] w-full h-full object-cover border-8 border-surface shadow-xl"
-                referrerPolicy="no-referrer"
               />
             </motion.div>
 
@@ -194,11 +197,13 @@ export default function About() {
                 whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
                 className="relative group cursor-pointer w-full sm:w-48 h-32 shrink-0"
               >
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?q=80&w=400&auto=format&fit=crop"
                   alt="Video Thumbnail"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 192px"
+                  unoptimized
                   className="rounded-2xl w-full h-full object-cover shadow-md"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all rounded-2xl flex items-center justify-center">
                   <motion.div

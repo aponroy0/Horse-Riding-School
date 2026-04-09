@@ -1,5 +1,6 @@
 import { Check, Eye, Play, Target } from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 export default function WhyChoose() {
   return (
@@ -38,11 +39,12 @@ export default function WhyChoose() {
                 viewport={{ once: true }}
                 className="relative group cursor-pointer aspect-video rounded-[40px] overflow-hidden shadow-2xl"
               >
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?q=80&w=600&auto=format&fit=crop"
                   alt="Video Thumbnail"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 40vw"
                   className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all flex items-center justify-center">
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary shadow-lg group-hover:scale-110 transition-transform">

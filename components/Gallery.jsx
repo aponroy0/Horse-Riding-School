@@ -1,28 +1,25 @@
 import { ArrowRight, Plus } from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const galleryItems = [
   {
-    image:
-      "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/moments/m-1.png",
     type: "portrait",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1679198488361-1e829637dbd0?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/assets/moments/m-2.png",
     type: "featured",
     badge: "Riding Club",
     title: "Unforgettable Moments in...",
     desc: "Explore our favorite riding moments and training highlights captured in action.",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/moments/m-3.png",
     type: "portrait",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?q=80&w=600&auto=format&fit=crop",
+    image: "/assets/moments/m-4.png",
     type: "portrait",
   },
 ];
@@ -61,11 +58,12 @@ export default function Gallery() {
             viewport={{ once: true }}
             className="md:col-span-1 rounded-[30px] overflow-hidden h-100 md:h-full relative group"
           >
-            <img
+            <Image
               src={galleryItems[0].image}
               alt="Gallery 1"
+              fill
+              sizes="(max-width: 768px) 100vw, 20vw"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              referrerPolicy="no-referrer"
             />
           </motion.div>
 
@@ -77,11 +75,12 @@ export default function Gallery() {
             transition={{ delay: 0.1 }}
             className="md:col-span-2 rounded-[30px] overflow-hidden relative h-100 md:h-full group"
           >
-            <img
+            <Image
               src={galleryItems[1].image}
               alt="Gallery 2"
+              fill
+              sizes="(max-width: 768px) 100vw, 40vw"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              referrerPolicy="no-referrer"
             />
 
             {/* Gradient Overlay */}
@@ -116,11 +115,12 @@ export default function Gallery() {
             transition={{ delay: 0.2 }}
             className="md:col-span-1 rounded-[30px] overflow-hidden h-100 md:h-full relative group"
           >
-            <img
+            <Image
               src={galleryItems[2].image}
               alt="Gallery 3"
+              fill
+              sizes="(max-width: 768px) 100vw, 20vw"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              referrerPolicy="no-referrer"
             />
           </motion.div>
 
@@ -132,11 +132,12 @@ export default function Gallery() {
             transition={{ delay: 0.3 }}
             className="md:col-span-1 rounded-[30px] overflow-hidden h-100 md:h-full relative group"
           >
-            <img
+            <Image
               src={galleryItems[3].image}
               alt="Gallery 4"
+              fill
+              sizes="(max-width: 768px) 100vw, 20vw"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              referrerPolicy="no-referrer"
             />
           </motion.div>
         </div>

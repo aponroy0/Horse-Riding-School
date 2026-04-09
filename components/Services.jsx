@@ -1,32 +1,47 @@
 import { ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
+import Image from "next/image";
 
 const services = [
   {
-    image:
-      "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?q=80&w=400&auto=format&fit=crop",
-    title: "Beginner Riding\nLessons",
+    image: "/assets/services/riding.png",
+    title: "Horse Riding & Professional Training",
     color: "bg-white text-primary",
     btnColor: "bg-brand text-white",
   },
   {
-    image:
-      "https://plus.unsplash.com/premium_photo-1770242546571-75aa57b70303?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGhvcnNlc3xlbnwwfDJ8MHx8fDA%3D",
-    title: "Advanced Riding\nTraining",
+    image: "/assets/services/archery.png",
+    title: "Horseback Archery Training",
     color: "bg-primary text-white",
     btnColor: "bg-brand-muted text-white",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=400&auto=format&fit=crop",
-    title: "Horse Care\nWorkshops",
+    image: "/assets/services/consultancy.png",
+    title: "Expert Horse Consultancy",
     color: "bg-white text-primary",
     btnColor: "bg-brand text-white",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?q=80&w=400&auto=format&fit=crop",
-    title: "Memberships Of\nRiding Club",
+    image: "/assets/services/rental.png",
+    title: "Horse & Stable Rental Facilities",
+    color: "bg-white text-primary",
+    btnColor: "bg-brand text-white",
+  },
+  {
+    image: "/assets/services/trainners.png",
+    title: "Well-Trained Horses with Experienced Trainers",
+    color: "bg-white text-primary",
+    btnColor: "bg-brand text-white",
+  },
+  {
+    image: "/assets/services/environment.png",
+    title: "Spacious Arena with a Safe & Comfortable Environment",
+    color: "bg-white text-primary",
+    btnColor: "bg-brand text-white",
+  },
+  {
+    image: "/assets/services/photography.png",
+    title: "Photography & Videography Services",
     color: "bg-white text-primary",
     btnColor: "bg-brand text-white",
   },
@@ -35,31 +50,8 @@ const services = [
 export default function Services() {
   const shouldReduceMotion = useReducedMotion();
 
-  const sectionVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: shouldReduceMotion ? 0 : 0.12,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 36, scale: 0.96 },
-    show: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: shouldReduceMotion ? 0.15 : 0.6,
-        ease: [0.16, 1, 0.3, 1],
-      },
-    },
-  };
-
   return (
-    <section id="services" className="py-20 lg:py-32 relative overflow-hidden">
+    <section id="services" className="py-20 lg:py-32 relative overflow-visible">
       <motion.div
         aria-hidden="true"
         className="absolute -top-20 -left-16 w-64 h-64 bg-brand/15 rounded-full blur-3xl"
@@ -114,17 +106,21 @@ export default function Services() {
           </motion.h2>
         </div>
 
-        <motion.div
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              variants={cardVariants}
+              initial={{
+                opacity: shouldReduceMotion ? 1 : 0,
+                y: shouldReduceMotion ? 0 : 20,
+                scale: shouldReduceMotion ? 1 : 0.98,
+              }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                duration: shouldReduceMotion ? 0.01 : 0.45,
+                delay: shouldReduceMotion ? 0 : index * 0.06,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               whileHover={
                 shouldReduceMotion
                   ? undefined
@@ -137,11 +133,12 @@ export default function Services() {
               className={`rounded-[30px] overflow-hidden shadow-xl flex flex-col items-center text-center group ${service.color}`}
             >
               <div className="w-full h-48 relative">
-                <img
+                <Image
                   src={service.image}
                   alt={service.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                  referrerPolicy="no-referrer"
                 />
                 <motion.div
                   className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-16 h-16 bg-primary rounded-full border-4 border-surface flex items-center justify-center shadow-lg"
@@ -163,10 +160,12 @@ export default function Services() {
                     ease: "easeInOut",
                   }}
                 >
-                  <img
-                    src="https://api.iconify.design/mdi:horse-human.svg?color=%23C5A16F"
-                    className="w-8 h-8"
+                  <Image
+                    src="/assets/Buraq_Horse_Riding_Logo.png"
                     alt="icon"
+                    width={32}
+                    height={32}
+                    className="w-8 h-8"
                   />
                 </motion.div>
               </div>
@@ -200,7 +199,7 @@ export default function Services() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
