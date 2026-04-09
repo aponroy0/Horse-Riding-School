@@ -15,7 +15,7 @@ export default function WhyChoose() {
                 viewport={{ once: true }}
                 className="inline-flex items-center space-x-2 text-secondary font-medium mb-4"
               >
-                <span className="w-8 h-[2px] bg-secondary" />
+                <span className="w-8 h-0.5 bg-secondary" />
                 <span className="uppercase tracking-widest text-sm">
                   Why Choose Horseno
                 </span>
@@ -53,7 +53,7 @@ export default function WhyChoose() {
 
               <div className="space-y-8">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-accent text-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-accent text-secondary rounded-full flex items-center justify-center shrink-0">
                     <Target size={24} />
                   </div>
                   <div>
@@ -67,7 +67,7 @@ export default function WhyChoose() {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-accent text-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-accent text-secondary rounded-full flex items-center justify-center shrink-0">
                     <Eye size={24} />
                   </div>
                   <div>

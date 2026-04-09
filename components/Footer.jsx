@@ -28,12 +28,12 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="text-white bg-gradient-to-r from-[#264A3A] via-[#2D4F40] to-[#2A4B3D]">
+    <footer className="text-white bg-gradient-to-r from-footer-start via-footer-mid to-footer-end">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 lg:pt-20 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-12 h-12 rounded-full bg-[#E5D164] flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-full bg-highlight flex items-center justify-center shrink-0">
                 <img
                   src="https://api.iconify.design/mdi:horse-head.svg?color=%232C4B3B"
                   alt="Horseno logo"
@@ -58,13 +58,13 @@ export default function Footer() {
             <h3 className="text-[34px] sm:text-[36px] leading-none font-semibold mb-2">
               Quick Link
             </h3>
-            <div className="w-11 h-[3px] bg-[#DCCB62] mb-6" />
+            <div className="w-11 h-[3px] bg-highlight-soft mb-6" />
             <ul className="space-y-3.5 text-white/85 text-sm">
               {quickLinks.map((link, index) => (
                 <li key={link}>
                   <a
                     href="#"
-                    className={`group inline-flex items-center gap-2.5 transition-colors ${index === 1 ? "text-[#DCCB62]" : "hover:text-[#DCCB62]"}`}
+                    className={`group inline-flex items-center gap-2.5 transition-colors ${index === 1 ? "text-highlight-soft" : "hover:text-highlight-soft"}`}
                   >
                     <ChevronRight size={14} className="shrink-0" />
                     <span>{link}</span>
@@ -78,13 +78,13 @@ export default function Footer() {
             <h3 className="text-[34px] sm:text-[36px] leading-none font-semibold mb-2">
               Explore
             </h3>
-            <div className="w-11 h-[3px] bg-[#DCCB62] mb-6" />
+            <div className="w-11 h-[3px] bg-highlight-soft mb-6" />
             <ul className="space-y-3.5 text-white/85 text-sm">
               {exploreLinks.map((link) => (
                 <li key={link}>
                   <a
                     href="#"
-                    className="inline-flex items-center gap-2.5 hover:text-[#DCCB62] transition-colors"
+                    className="inline-flex items-center gap-2.5 hover:text-highlight-soft transition-colors"
                   >
                     <ChevronRight size={14} className="shrink-0" />
                     <span>{link}</span>
@@ -93,42 +93,24 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          <div>
-            <h3 className="text-[34px] sm:text-[36px] leading-none font-semibold mb-2">
-              Instagram
-            </h3>
-            <div className="w-11 h-[3px] bg-[#DCCB62] mb-6" />
-            <div className="grid grid-cols-3 gap-2.5 max-w-[220px] sm:max-w-none">
-              {instagramImages.map((src, index) => (
-                <div key={src} className="overflow-hidden rounded-md">
-                  <img
-                    src={src}
-                    alt={`Horse gallery ${index + 1}`}
-                    className="w-full h-[58px] sm:h-[60px] object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
 
-      <div className="bg-[#6E8F61]">
+      <div className="bg-footer-band">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-3 text-[#F2EFDF]">
-            <div className="flex items-center gap-3 md:pr-5 md:border-r md:border-[#7FA173]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-3 text-footer-plain">
+            <div className="flex items-center gap-3 md:pr-5 md:border-r md:border-footer-divider">
               <MapPin
-                className="w-8 h-8 text-[#E5D164] shrink-0"
+                className="w-8 h-8 text-highlight shrink-0"
                 strokeWidth={2.2}
               />
               <p className="text-[29px] sm:text-[30px] font-semibold leading-tight">
                 Willow Creek Ranch, Colorado, USA
               </p>
             </div>
-            <div className="flex items-center gap-3 md:px-5 md:border-r md:border-[#7FA173]">
+            <div className="flex items-center gap-3 md:px-5 md:border-r md:border-footer-divider">
               <Mail
-                className="w-8 h-8 text-[#E5D164] shrink-0"
+                className="w-8 h-8 text-highlight shrink-0"
                 strokeWidth={2.2}
               />
               <div>
@@ -140,7 +122,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-3 md:pl-5">
               <Headphones
-                className="w-8 h-8 text-[#E5D164] shrink-0"
+                className="w-8 h-8 text-highlight shrink-0"
                 strokeWidth={2.2}
               />
               <div>
@@ -156,10 +138,10 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-[#264839]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 text-center text-sm text-[#ECE7D5]">
-          Copyright © 2024 <span className="text-[#E5D164]">Horseno</span>. All
-          rights reserved by <span className="text-[#E5D164]">Vecuro</span>
+      <div className="bg-footer-deep">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 text-center text-sm text-footer-text">
+          Copyright © 2024 <span className="text-highlight">Horseno</span>. All
+          rights reserved by <span className="text-highlight">Vecuro</span>
         </div>
       </div>
     </footer>

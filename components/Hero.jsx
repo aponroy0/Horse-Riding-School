@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden">
+    <section className="relative min-h-[700px] lg:h-screen pt-28 sm:pt-32 lg:pt-0 pb-14 sm:pb-16 lg:pb-0 flex items-start lg:items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -15,7 +15,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/40" />
       </div>
       <div className="max-w-7xl mx-auto px-4 ">
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-20">
+        <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-2 sm:pt-4 lg:pt-20">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

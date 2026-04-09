@@ -5,10 +5,14 @@ import {
   Instagram,
   Mail,
   MapPin,
+  Menu,
   Twitter,
+  X,
   Youtube,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+
+const navItems = ["Home", "About", "Services", "Events", "Blog", "Contact"];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,6 +45,7 @@ export default function Navbar() {
             <div className="flex items-center space-x-2 cursor-pointer hover:text-secondary transition-colors">
               <Globe size={14} className="text-secondary" />
               <span>English</span>
+              <span className="text-white/60">|</span>
             </div>
             <div className="flex items-center space-x-4">
               <Facebook
@@ -67,11 +72,17 @@ export default function Navbar() {
       {/* Main Nav */}
       <nav
         className={cn(
-          "transition-all duration-300 px-4 lg:px-8",
-          isScrolled ? "bg-white py-3 shadow-md" : "bg-transparent py-6",
+          "px-4 lg:px-8 transition-all duration-300",
+          isScrolled ? "py-2.5 lg:py-3" : "py-3 lg:py-4",
         )}
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <div
+          className={cn(
+            "max-w-7xl mx-auto flex justify-between items-center rounded-[20px] px-4 md:px-6 lg:px-8",
+            "bg-accent border border-brand/15",
+            isScrolled ? "py-3 shadow-lg" : "py-3.5 shadow-md",
+          )}
+        >
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
@@ -83,107 +94,63 @@ export default function Navbar() {
               />
             </div>
             <div>
-              <h1
-                className={cn(
-                  "text-2xl font-bold leading-none",
-                  isScrolled ? "text-primary" : "text-white",
-                )}
-              >
+              <h1 className="text-3xl md:text-[38px] leading-none font-black text-heading tracking-tight">
                 Horseno
               </h1>
-              <p
-                className={cn(
-                  "text-[10px] uppercase tracking-widest",
-                  isScrolled ? "text-secondary" : "text-secondary",
-                )}
-              >
+              <p className="hidden sm:block text-[10px] uppercase tracking-[0.28em] text-secondary">
                 Horse Means Love
               </p>
             </div>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {["Home", "About", "Services", "Pages", "Blog", "Contact"].map(
-              (item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className={cn(
-                    "text-sm font-medium hover:text-secondary transition-colors",
-                    isScrolled ? "text-primary" : "text-white",
-                  )}
-                >
-                  {item}
-                </a>
-              ),
-            )}
+          <div className="hidden lg:flex items-center space-x-9">
+            {navItems.map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className={cn(
+                  "text-[17px] font-semibold hover:text-brand transition-colors",
+                  item === "Home" ? "text-brand" : "text-heading",
+                )}
+              >
+                {item}
+              </a>
+            ))}
           </div>
 
           {/* Actions */}
-          {/* <div className="flex items-center space-x-4">
-            <div
-              className={cn(
-                "hidden md:flex items-center border rounded-full px-3 py-1.5",
-                isScrolled
-                  ? "border-gray-200 bg-gray-50"
-                  : "border-white/20 bg-white/10",
-              )}
-            >
-              <input
-                type="text"
-                placeholder="Search..."
-                className={cn(
-                  "bg-transparent border-none outline-none text-xs w-24 focus:w-40 transition-all",
-                  isScrolled
-                    ? "text-primary placeholder:text-gray-400"
-                    : "text-white placeholder:text-white/60",
-                )}
-              />
-              <Search
-                size={16}
-                className={isScrolled ? "text-primary" : "text-white"}
-              />
-            </div>
-
+          <div className="flex items-center space-x-4">
             <button
               className="lg:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? (
-                <X
-                  size={24}
-                  className={isScrolled ? "text-primary" : "text-white"}
-                />
+                <X size={24} className="text-primary" />
               ) : (
-                <Menu
-                  size={24}
-                  className={isScrolled ? "text-primary" : "text-white"}
-                />
+                <Menu size={24} className="text-primary" />
               )}
             </button>
-
-            <button className="hidden lg:flex items-center justify-center w-10 h-10 bg-secondary text-white rounded-full hover:bg-secondary/90 transition-all">
-              <Menu size={20} />
-            </button>
-          </div> */}
+          </div>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-100 py-6 px-4 flex flex-col space-y-4 animate-in fade-in slide-in-from-top-4">
-            {["Home", "About", "Services", "Pages", "Blog", "Contact"].map(
-              (item) => (
+          <div className="lg:hidden absolute top-full left-4 right-4 mt-2 rounded-2xl overflow-hidden border border-brand/20 bg-linear-to-b from-accent to-white shadow-xl animate-in fade-in slide-in-from-top-4">
+            <div className="flex flex-col divide-y divide-brand/10">
+              {navItems.map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-primary text-lg font-medium border-b border-gray-50 pb-2"
+                  className="flex items-center justify-between px-4 py-3.5 text-primary text-base font-medium hover:bg-brand/10 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {item}
+                  <span>{item}</span>
+                  <span className="text-brand text-sm">+</span>
                 </a>
-              ),
-            )}
+              ))}
+            </div>
           </div>
         )}
       </nav>

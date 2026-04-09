@@ -1,20 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Cormorant Garamond", serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  
-  --color-primary: #2D4A3E;
-  --color-secondary: #C5A16F;
-  --color-accent: #F4F1EA;
+  --font-serif:
+    "Poppins", "Segoe UI", Roboto, "Helvetica Neue", Arial, ui-sans-serif,
+    system-ui, sans-serif;
+  --font-sans:
+    "Poppins", "Segoe UI", Roboto, "Helvetica Neue", Arial, ui-sans-serif,
+    system-ui, sans-serif;
+  --font-body:
+    "Poppins", "Segoe UI", Roboto, "Helvetica Neue", Arial, ui-sans-serif,
+    system-ui, sans-serif;
+  --font-heading:
+    "Poppins", "Segoe UI", Roboto, "Helvetica Neue", Arial, ui-sans-serif,
+    system-ui, sans-serif;
+  --font-ui:
+    "Poppins", "Segoe UI", Roboto, "Helvetica Neue", Arial, ui-sans-serif,
+    system-ui, sans-serif;
+
+  --color-primary: #2d4a3e;
+  --color-secondary: #c5a16f;
+  --color-accent: #f4f1ea;
+  --color-brand: #5a806b;
+  --color-brand-dark: #1f362d;
+  --color-brand-muted: #4a6b58;
+  --color-surface: #efebe1;
+  --color-heading: #333333;
+  --color-highlight: #e8d154;
+  --color-highlight-soft: #dccb62;
+  --color-panel: #314a3d;
+  --color-menu-light: #f3f7f4;
+  --color-footer-start: #264a3a;
+  --color-footer-mid: #2d4f40;
+  --color-footer-end: #2a4b3d;
+  --color-footer-band: #6e8f61;
+  --color-footer-divider: #7fa173;
+  --color-footer-deep: #264839;
+  --color-footer-text: #ece7d5;
+  --color-footer-plain: #f2efdf;
+}
+
+:root {
+  --site-font-body: var(--font-body);
+  --site-font-heading: var(--font-heading);
+  --site-font-ui: var(--font-ui);
 }
 
 @layer base {
   body {
-    @apply font-sans text-gray-900 bg-white;
+    font-family: var(--site-font-body);
+    @apply text-gray-900 bg-white;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--site-font-heading);
+  }
+  p,
+  li,
+  a,
+  span,
+  label,
+  button,
+  input,
+  textarea,
+  select {
+    font-family: var(--site-font-body);
+  }
+}
+
+@layer utilities {
+  .font-ui {
+    font-family: var(--site-font-ui);
   }
 }

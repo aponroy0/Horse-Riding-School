@@ -13,7 +13,7 @@ import Testimonials from "@/components/Testimonials";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#EFEBE1] selection:bg-[#E8D154] selection:text-[#314A3D] relative">
+    <div className="min-h-screen bg-surface selection:bg-highlight selection:text-panel relative">
       <div className="fixed inset-0 z-0 opacity-10 grayscale pointer-events-none">
         <img
           src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?q=80&w=2000&auto=format&fit=crop"

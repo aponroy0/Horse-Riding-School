@@ -47,15 +47,15 @@ export default function FAQSection() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-[#314A3D] p-8 md:p-12 rounded-[40px] shadow-2xl text-white"
+            className="bg-panel p-8 md:p-12 rounded-[40px] shadow-2xl text-white"
           >
             <div className="text-center mb-10">
-              <div className="inline-flex items-center space-x-2 text-[#E8D154] font-medium mb-4">
-                <span className="w-8 h-0.5 bg-[#E8D154]" />
+              <div className="inline-flex items-center space-x-2 text-highlight font-medium mb-4">
+                <span className="w-8 h-0.5 bg-highlight" />
                 <span className="uppercase tracking-widest text-sm">
                   Appointment
                 </span>
-                <span className="w-8 h-0.5 bg-[#E8D154]" />
+                <span className="w-8 h-0.5 bg-highlight" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold">
                 Request A <br /> Training Session
@@ -129,7 +129,7 @@ export default function FAQSection() {
                   className="w-full bg-white/10 border border-white/20 rounded-3xl py-3 pl-12 pr-6 outline-none focus:border-secondary transition-colors resize-none"
                 ></textarea>
               </div>
-              <button className="w-full bg-[#E8D154] text-[#314A3D] font-bold py-4 rounded-full hover:bg-white transition-all">
+              <button className="w-full bg-highlight text-panel font-bold py-4 rounded-full hover:bg-white transition-all">
                 Submit Now
               </button>
             </form>
@@ -141,9 +141,9 @@ export default function FAQSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center space-x-2 text-[#5A806B] font-bold mb-4"
+              className="inline-flex items-center space-x-2 text-brand font-bold mb-4"
             >
-              <span className="w-6 h-0.5 bg-[#5A806B]" />
+              <span className="w-6 h-0.5 bg-brand" />
               <span className="uppercase tracking-widest text-sm">FAQs</span>
             </motion.div>
             <motion.h2
@@ -151,7 +151,7 @@ export default function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl font-bold text-[#333] mb-12"
+              className="text-4xl md:text-5xl font-bold text-heading mb-12"
             >
               Frequently Asked <br /> Any Questions
             </motion.h2>
@@ -173,8 +173,8 @@ export default function FAQSection() {
                     className={cn(
                       "w-full flex items-center justify-between p-6 text-left transition-colors",
                       openIndex === index
-                        ? "bg-[#314A3D] text-white"
-                        : "bg-white text-[#333] hover:bg-gray-50",
+                        ? "bg-panel text-white"
+                        : "bg-white text-heading hover:bg-gray-50",
                     )}
                   >
                     <span className="font-bold">{faq.question}</span>
@@ -182,8 +182,8 @@ export default function FAQSection() {
                       className={cn(
                         "w-8 h-8 rounded-full flex items-center justify-center transition-colors",
                         openIndex === index
-                          ? "bg-[#E8D154] text-[#314A3D]"
-                          : "bg-gray-100 text-[#333]",
+                          ? "bg-highlight text-panel"
+                          : "bg-gray-100 text-heading",
                       )}
                     >
                       {openIndex === index ? (

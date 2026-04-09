@@ -41,23 +41,22 @@ export default function Instructors() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center space-x-2 text-[#5A806B] font-bold mb-4"
+            className="inline-flex items-center space-x-2 text-brand font-bold mb-4"
           >
-            <span className="w-6 h-[2px] bg-[#5A806B]" />
+            <span className="w-6 h-0.5 bg-brand" />
             <span className="uppercase tracking-widest text-sm">
               Team Members
             </span>
-            <span className="w-6 h-[2px] bg-[#5A806B]" />
+            <span className="w-6 h-0.5 bg-brand" />
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-[#333] mb-6"
+            className="text-4xl md:text-5xl font-bold text-heading mb-6"
           >
-            Meet Our Best <br />{" "}
-            <span className="text-[#5A806B]">Instructors</span>
+            Meet Our Best <br /> <span className="text-brand">Instructors</span>
           </motion.h2>
         </div>
 
@@ -71,7 +70,7 @@ export default function Instructors() {
               transition={{ duration: 0.5, delay: instructor.delay }}
               className="group relative"
             >
-              <div className="relative overflow-hidden rounded-[40px] aspect-[3/4]">
+              <div className="relative overflow-hidden rounded-[40px] aspect-3/4">
                 <img
                   src={instructor.image}
                   alt={instructor.name}
@@ -107,10 +106,10 @@ export default function Instructors() {
                 <div className="absolute bottom-6 left-6 right-6 bg-white p-6 rounded-3xl shadow-lg transform group-hover:-translate-y-2 transition-transform duration-300">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h3 className="text-xl font-bold text-[#333]">
+                      <h3 className="text-xl font-bold text-heading">
                         {instructor.name}
                       </h3>
-                      <p className="text-xs text-[#5A806B] uppercase tracking-widest mt-1">
+                      <p className="text-xs text-brand uppercase tracking-widest mt-1">
                         {instructor.role}
                       </p>
                     </div>

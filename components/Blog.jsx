@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 
 const blogs = [
   {
@@ -11,9 +11,9 @@ const blogs = [
     title: "Horse Riding Tips for\nBeginners",
     delay: 0.1,
     bgColor: "bg-white",
-    textColor: "text-[#333]",
+    textColor: "text-heading",
     metaColor: "text-gray-500",
-    btnBg: "bg-[#5A806B]",
+    btnBg: "bg-brand",
     btnText: "text-white",
   },
   {
@@ -24,10 +24,10 @@ const blogs = [
     comments: "03",
     title: "How to Improve Your\nRiding Skills",
     delay: 0.2,
-    bgColor: "bg-[#2D4A3E]",
+    bgColor: "bg-primary",
     textColor: "text-white",
     metaColor: "text-white/70",
-    btnBg: "bg-[#5A806B]",
+    btnBg: "bg-brand",
     btnText: "text-white",
   },
   {
@@ -39,80 +39,197 @@ const blogs = [
     title: "Choosing the Right\nGear for Riding",
     delay: 0.3,
     bgColor: "bg-white",
-    textColor: "text-[#333]",
+    textColor: "text-heading",
     metaColor: "text-gray-500",
-    btnBg: "bg-[#5A806B]",
+    btnBg: "bg-brand",
     btnText: "text-white",
   },
 ];
 
 export default function Blog() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const headerVariants = {
+    hidden: { opacity: 0, x: shouldReduceMotion ? 0 : -22 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: shouldReduceMotion ? 0.18 : 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
+  const gridVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0.05 : 0.13,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      x: shouldReduceMotion ? 0 : 34,
+      clipPath: shouldReduceMotion ? "inset(0 0 0 0)" : "inset(0 0 0 100%)",
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+      clipPath: "inset(0 0 0 0)",
+      transition: {
+        duration: shouldReduceMotion ? 0.18 : 0.85,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
+
   return (
     <section id="blog" className="py-20 lg:py-32 relative overflow-hidden">
+      <motion.div
+        aria-hidden="true"
+        className="absolute -left-16 top-24 h-52 w-52 rounded-full border border-brand/25"
+        animate={
+          shouldReduceMotion
+            ? undefined
+            : {
+                scale: [1, 1.14, 1],
+                opacity: [0.3, 0.9, 0.3],
+              }
+        }
+        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+      />
+
       <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16">
           <div className="max-w-xl">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={headerVariants}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
-              className="inline-flex items-center space-x-2 text-[#5A806B] font-bold mb-4"
+              className="inline-flex items-center space-x-2 text-brand font-bold mb-4"
             >
-              <span className="w-6 h-[2px] bg-[#5A806B]" />
+              <motion.span
+                className="w-6 h-0.5 bg-brand"
+                animate={
+                  shouldReduceMotion ? undefined : { scaleX: [1, 1.4, 1] }
+                }
+                transition={{
+                  duration: 1.8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
               <span className="uppercase tracking-widest text-sm">
                 News And Blog
               </span>
-              <span className="w-6 h-[2px] bg-[#5A806B]" />
+              <motion.span
+                className="w-6 h-0.5 bg-brand"
+                animate={
+                  shouldReduceMotion ? undefined : { scaleX: [1, 1.4, 1] }
+                }
+                transition={{
+                  duration: 1.8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.2,
+                }}
+              />
             </motion.div>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={headerVariants}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl font-bold text-[#333]"
+              transition={{ delay: shouldReduceMotion ? 0 : 0.12 }}
+              className="text-4xl md:text-5xl font-bold text-heading"
             >
-              Our Latest <span className="text-[#5A806B]">News</span>
+              Our Latest <span className="text-brand">News</span>
               <br /> And Blogs
             </motion.h2>
           </div>
           <div className="flex space-x-4 mt-8 md:mt-0">
-            <button className="w-12 h-12 rounded-full border border-gray-400 flex items-center justify-center text-gray-600 hover:bg-[#2D4A3E] hover:text-white hover:border-[#2D4A3E] transition-all">
+            <motion.button
+              whileHover={
+                shouldReduceMotion ? undefined : { y: -2, rotate: -8 }
+              }
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.96 }}
+              className="w-12 h-12 rounded-full border border-gray-400 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-all"
+            >
               <ArrowLeft size={20} />
-            </button>
-            <button className="w-12 h-12 rounded-full bg-[#2D4A3E] flex items-center justify-center text-white hover:bg-[#5A806B] transition-all">
+            </motion.button>
+            <motion.button
+              whileHover={shouldReduceMotion ? undefined : { y: -2, rotate: 8 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.96 }}
+              className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white hover:bg-brand transition-all"
+            >
               <ArrowRight size={20} />
-            </button>
+            </motion.button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <motion.div
+          variants={gridVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
           {blogs.map((blog, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: blog.delay }}
+              variants={cardVariants}
+              whileHover={
+                shouldReduceMotion
+                  ? undefined
+                  : {
+                      y: -8,
+                      rotateY: index === 1 ? -3 : 3,
+                      transition: { duration: 0.28, ease: "easeOut" },
+                    }
+              }
               className={`${blog.bgColor} rounded-[30px] overflow-hidden shadow-xl flex flex-col group`}
+              style={{ transformStyle: "preserve-3d" }}
             >
               <div className="relative h-64">
-                <img
+                <motion.img
                   src={blog.image}
                   alt={blog.title}
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  whileHover={shouldReduceMotion ? undefined : { scale: 1.07 }}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
                 />
 
                 {/* Date Badge */}
-                <div
-                  className={`absolute -bottom-4 left-1/2 -translate-x-1/2 ${index === 1 ? "bg-[#1F362D]" : "bg-[#5A806B]"} text-white px-6 py-2 rounded-full text-sm font-bold whitespace-nowrap shadow-lg`}
+                <motion.div
+                  initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    delay: shouldReduceMotion ? 0 : 0.2 + blog.delay,
+                    duration: 0.45,
+                  }}
+                  className={`absolute -bottom-4 left-1/2 -translate-x-1/2 ${index === 1 ? "bg-brand-dark" : "bg-brand"} text-white px-6 py-2 rounded-full text-sm font-bold whitespace-nowrap shadow-lg`}
                 >
                   {blog.date}
-                </div>
+                </motion.div>
               </div>
 
               <div className="pt-12 pb-8 px-8 flex flex-col items-center text-center flex-grow">
-                <div
+                <motion.div
+                  initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    delay: shouldReduceMotion ? 0 : 0.28 + blog.delay,
+                    duration: 0.5,
+                  }}
                   className={`flex items-center justify-center space-x-4 text-xs font-medium mb-6 ${blog.metaColor}`}
                 >
                   <div className="flex items-center space-x-2">
@@ -146,26 +263,50 @@ export default function Blog() {
                     </svg>
                     <span>({blog.comments}) Comments</span>
                   </div>
-                </div>
+                </motion.div>
 
-                <h3
+                <motion.h3
+                  initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    delay: shouldReduceMotion ? 0 : 0.38 + blog.delay,
+                    duration: 0.55,
+                  }}
                   className={`text-xl font-bold mb-8 whitespace-pre-line ${blog.textColor}`}
                 >
                   {blog.title}
-                </h3>
+                </motion.h3>
 
                 <div className="mt-auto">
-                  <button
+                  <motion.button
+                    whileHover={
+                      shouldReduceMotion ? undefined : { scale: 1.04 }
+                    }
+                    whileTap={shouldReduceMotion ? undefined : { scale: 0.97 }}
                     className={`${blog.btnBg} ${blog.btnText} px-6 py-2.5 rounded-full text-sm font-bold flex items-center space-x-2 hover:opacity-90 transition-opacity mx-auto`}
                   >
                     <span>Read More</span>
-                    <ArrowRight size={16} />
-                  </button>
+                    <motion.span
+                      animate={
+                        shouldReduceMotion
+                          ? undefined
+                          : { x: [0, 5, 0], rotate: [0, 8, 0] }
+                      }
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <ArrowRight size={16} />
+                    </motion.span>
+                  </motion.button>
                 </div>
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

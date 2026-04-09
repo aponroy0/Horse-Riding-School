@@ -9,8 +9,8 @@ const testimonials = [
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
     text: "Lorem ipsum dolor sit amet, isd consectectur adipiscing elit, sed do your eiusmod tempor incididunt ut labore eta aliqua. Ut enim ad minim labore veniam",
     rating: 5,
-    color: "bg-white text-[#333]",
-    starColor: "text-[#5A806B]",
+    color: "bg-white text-heading",
+    starColor: "text-brand",
     quoteColor: "text-gray-200",
   },
   {
@@ -20,9 +20,9 @@ const testimonials = [
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
     text: "Lorem ipsum dolor sit amet, isd consectectur adipiscing elit, sed do your eiusmod tempor incididunt ut labore eta aliqua. Ut enim ad minim labore veniam",
     rating: 5,
-    color: "bg-[#5A806B] text-white",
-    starColor: "text-[#E8D154]",
-    quoteColor: "text-[#4A6B58]",
+    color: "bg-brand text-white",
+    starColor: "text-highlight",
+    quoteColor: "text-brand-muted",
   },
   {
     name: "Adam Rodja",
@@ -31,8 +31,8 @@ const testimonials = [
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
     text: "Lorem ipsum dolor sit amet, isd consectectur adipiscing elit, sed do your eiusmod tempor incididunt ut labore eta aliqua. Ut enim ad minim labore veniam",
     rating: 5,
-    color: "bg-white text-[#333]",
-    starColor: "text-[#5A806B]",
+    color: "bg-white text-heading",
+    starColor: "text-brand",
     quoteColor: "text-gray-200",
   },
 ];
@@ -46,22 +46,22 @@ export default function Testimonials() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center space-x-2 text-[#5A806B] font-bold mb-4"
+            className="inline-flex items-center space-x-2 text-brand font-bold mb-4"
           >
-            <span className="w-6 h-[2px] bg-[#5A806B]" />
+            <span className="w-6 h-0.5 bg-brand" />
             <span className="uppercase tracking-widest text-sm">
               Testimonials
             </span>
-            <span className="w-6 h-[2px] bg-[#5A806B]" />
+            <span className="w-6 h-0.5 bg-brand" />
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-[#333]"
+            className="text-4xl md:text-5xl font-bold text-heading"
           >
-            What Our <span className="text-[#5A806B]">Clients</span>
+            What Our <span className="text-brand">Clients</span>
             <br /> Feedback
           </motion.h2>
         </div>
@@ -77,7 +77,7 @@ export default function Testimonials() {
               className={`${testimonial.color} p-8 md:p-10 rounded-[30px] shadow-xl relative`}
             >
               {/* Avatar overlapping top right */}
-              <div className="absolute -top-8 right-8 w-16 h-16 rounded-2xl overflow-hidden border-4 border-[#EFEBE1] shadow-lg">
+              <div className="absolute -top-8 right-8 w-16 h-16 rounded-2xl overflow-hidden border-4 border-surface shadow-lg">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
