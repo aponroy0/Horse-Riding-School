@@ -141,13 +141,13 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-4 right-4 mt-2 rounded-2xl overflow-hidden border border-brand/20 bg-linear-to-b from-accent to-white shadow-xl animate-in fade-in slide-in-from-top-4">
+          <div className="lg:hidden absolute top-full left-4 right-4 mt-2 rounded-2xl overflow-hidden border border-brand/20 bg-linear-to-b from-accent to-background shadow-xl animate-in fade-in slide-in-from-top-4">
             <div className="flex flex-col divide-y divide-brand/10">
               {navItems.map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="flex items-center justify-between px-4 py-3.5 text-primary text-base font-medium hover:bg-brand/10 transition-colors"
+                  className="flex items-center justify-between px-4 py-3.5 text-heading text-base font-medium hover:bg-brand/10 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <span>{item}</span>

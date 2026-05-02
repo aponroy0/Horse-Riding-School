@@ -43,17 +43,15 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Images Grid */}
-          <div className="relative">
+          <div className="relative mb-12 lg:mb-0">
             <motion.div
               initial={{
                 opacity: 0,
                 x: shouldReduceMotion ? 0 : -36,
-                clipPath: shouldReduceMotion
-                  ? "inset(0 0 0 0)"
-                  : "inset(0 100% 0 0)",
+                scale: shouldReduceMotion ? 1 : 0.95,
               }}
-              whileInView={{ opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)" }}
-              viewport={{ once: true }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{
                 duration: shouldReduceMotion ? 0.2 : 0.95,
                 ease: [0.16, 1, 0.3, 1],
@@ -68,6 +66,7 @@ export default function About() {
                 alt="Horse 1"
                 width={900}
                 height={900}
+                priority
                 className="rounded-[30px] w-full aspect-square object-cover shadow-2xl"
               />
             </motion.div>
@@ -79,7 +78,7 @@ export default function About() {
                 scale: 0.9,
               }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               animate={
                 shouldReduceMotion
                   ? undefined
@@ -104,7 +103,7 @@ export default function About() {
                       },
                     }),
               }}
-              className="absolute -bottom-10 right-0 w-1/2 aspect-square"
+              className="absolute -bottom-10 right-0 w-1/2 aspect-square z-20"
             >
               <Image
                 src="/assets/about/ab-2.png"
