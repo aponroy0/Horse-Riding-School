@@ -6,7 +6,7 @@ const services = [
   {
     image: "/assets/services/riding.png",
     title: "Horse Riding & Professional Training",
-    color: "bg-white text-primary",
+    color: "bg-card text-primary",
     btnColor: "bg-brand text-white",
   },
   {
@@ -18,31 +18,31 @@ const services = [
   {
     image: "/assets/services/consultancy.png",
     title: "Expert Horse Consultancy",
-    color: "bg-white text-primary",
+    color: "bg-card text-primary",
     btnColor: "bg-brand text-white",
   },
   {
     image: "/assets/services/rental.png",
     title: "Horse & Stable Rental Facilities",
-    color: "bg-white text-primary",
+    color: "bg-card text-primary",
     btnColor: "bg-brand text-white",
   },
   {
     image: "/assets/services/trainners.png",
     title: "Well-Trained Horses with Experienced Trainers",
-    color: "bg-white text-primary",
+    color: "bg-card text-primary",
     btnColor: "bg-brand text-white",
   },
   {
     image: "/assets/services/environment.png",
     title: "Spacious Arena with a Safe & Comfortable Environment",
-    color: "bg-white text-primary",
+    color: "bg-card text-primary",
     btnColor: "bg-brand text-white",
   },
   {
     image: "/assets/services/photography.png",
     title: "Photography & Videography Services",
-    color: "bg-white text-primary",
+    color: "bg-card text-primary",
     btnColor: "bg-brand text-white",
   },
 ];

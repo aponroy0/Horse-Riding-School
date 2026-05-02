@@ -11,9 +11,9 @@ const blogs = [
     comments: "03",
     title: "Horse Riding Tips for\nBeginners",
     delay: 0.1,
-    bgColor: "bg-white",
+    bgColor: "bg-card",
     textColor: "text-heading",
-    metaColor: "text-gray-500",
+    metaColor: "text-muted-foreground",
     btnBg: "bg-brand",
     btnText: "text-white",
   },
@@ -39,9 +39,9 @@ const blogs = [
     comments: "03",
     title: "Choosing the Right\nGear for Riding",
     delay: 0.3,
-    bgColor: "bg-white",
+    bgColor: "bg-card",
     textColor: "text-heading",
-    metaColor: "text-gray-500",
+    metaColor: "text-muted-foreground",
     btnBg: "bg-brand",
     btnText: "text-white",
   },
@@ -160,7 +160,7 @@ export default function Blog() {
                 shouldReduceMotion ? undefined : { y: -2, rotate: -8 }
               }
               whileTap={shouldReduceMotion ? undefined : { scale: 0.96 }}
-              className="w-12 h-12 rounded-full border border-gray-400 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-all"
+              className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white hover:border-primary transition-all"
             >
               <ArrowLeft size={20} />
             </motion.button>

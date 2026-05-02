@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function WhyChoose() {
   return (
-    <section className="py-20 lg:py-32 bg-white overflow-hidden">
+    <section className="py-20 lg:py-32 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Video & Mission/Vision */}
@@ -62,7 +62,7 @@ export default function WhyChoose() {
                     <h3 className="text-xl font-bold text-primary mb-2">
                       Our Mission
                     </h3>
-                    <p className="text-sm text-gray-500 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       To inspire a love for horse riding through expert
                       training, community, and unforgettable experiences.
                     </p>
@@ -76,7 +76,7 @@ export default function WhyChoose() {
                     <h3 className="text-xl font-bold text-primary mb-2">
                       Our Vision
                     </h3>
-                    <p className="text-sm text-gray-500 leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       To be the leading hub for equestrian enthusiasts,
                       fostering a deep bond between riders and horses.
                     </p>
@@ -96,7 +96,7 @@ export default function WhyChoose() {
             <h3 className="text-2xl font-bold text-primary mb-8">
               What Makes Horseno <br /> Your Best Choice.
             </h3>
-            <p className="text-gray-600 mb-10 text-sm leading-relaxed">
+            <p className="text-muted-foreground mb-10 text-sm leading-relaxed">
               Experience expert training, a welcoming community, and a true
               passion for horse riding at Horseno.
             </p>

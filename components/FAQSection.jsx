@@ -164,7 +164,7 @@ export default function FAQSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="border border-gray-100 rounded-3xl overflow-hidden"
+                  className="border border-border rounded-3xl overflow-hidden"
                 >
                   <button
                     onClick={() =>
@@ -174,7 +174,7 @@ export default function FAQSection() {
                       "w-full flex items-center justify-between p-6 text-left transition-colors",
                       openIndex === index
                         ? "bg-panel text-white"
-                        : "bg-white text-heading hover:bg-gray-50",
+                        : "bg-card text-heading hover:bg-muted",
                     )}
                   >
                     <span className="font-bold">{faq.question}</span>
@@ -183,7 +183,7 @@ export default function FAQSection() {
                         "w-8 h-8 rounded-full flex items-center justify-center transition-colors",
                         openIndex === index
                           ? "bg-highlight text-panel"
-                          : "bg-gray-100 text-heading",
+                          : "bg-muted text-heading",
                       )}
                     >
                       {openIndex === index ? (
@@ -201,7 +201,7 @@ export default function FAQSection() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="p-6 text-gray-600 leading-relaxed bg-white">
+                        <div className="p-6 text-muted-foreground leading-relaxed bg-card">
                           {faq.answer}
                         </div>
                       </motion.div>

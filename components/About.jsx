@@ -179,7 +179,7 @@ export default function About() {
 
             <motion.p
               variants={itemVariants}
-              className="text-gray-600 mb-8 leading-relaxed text-sm"
+              className="text-muted-foreground mb-8 leading-relaxed text-sm"
             >
               Welcome to Horseno, your ultimate destination for all things
               equestrian! Whether you're a seasoned rider or just beginning your
@@ -237,7 +237,7 @@ export default function About() {
                       duration: shouldReduceMotion ? 0.15 : 0.55,
                       delay: shouldReduceMotion ? 0 : 0.1 * i,
                     }}
-                    className="flex items-center space-x-3 text-xs text-gray-700 font-medium"
+                    className="flex items-center space-x-3 text-xs text-muted-foreground font-medium"
                   >
                     <div className="w-4 h-4 rounded-full border-2 border-brand flex items-center justify-center shrink-0">
                       <motion.div

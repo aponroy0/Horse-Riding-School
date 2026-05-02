@@ -130,7 +130,7 @@ export default function Testimonials() {
                 delay: index * 0.05,
               }}
               whileHover={shouldReduceMotion ? undefined : { y: -6 }}
-              className="bg-white rounded-xl border border-brand/10 shadow-md overflow-hidden"
+              className="bg-card rounded-xl border border-brand/10 shadow-md overflow-hidden"
             >
               <div className="px-4 py-3.5 border-b border-brand/10">
                 <div className="flex items-start justify-between gap-3">
@@ -143,10 +143,10 @@ export default function Testimonials() {
                       className="w-9 h-9 rounded-full object-cover shrink-0"
                     />
                     <div className="min-w-0">
-                      <h4 className="text-[15px] font-semibold text-slate-800 truncate">
+                      <h4 className="text-[15px] font-semibold text-heading truncate">
                         {testimonial.name}
                       </h4>
-                      <p className="text-[11px] text-slate-500 truncate">
+                      <p className="text-[11px] text-muted-foreground truncate">
                         {testimonial.handle} · {testimonial.timeAgo}
                       </p>
                     </div>
@@ -159,7 +159,7 @@ export default function Testimonials() {
               </div>
 
               <div className="px-4 pt-3 pb-4 min-h-44">
-                <div className="flex space-x-1 mb-3 text-[#32589d]">
+                <div className="flex space-x-1 mb-3 text-[#32589d] dark:text-highlight">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} size={14} fill="currentColor" />
                   ))}
@@ -175,7 +175,7 @@ export default function Testimonials() {
                     className="w-full h-auto rounded-lg border border-brand/10"
                   />
                 ) : (
-                  <p className="text-[15px] leading-7 text-slate-600">
+                  <p className="text-[15px] leading-7 text-muted-foreground">
                     {testimonial.text}
                   </p>
                 )}

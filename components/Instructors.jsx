@@ -105,7 +105,7 @@ export default function Instructors() {
                 </div>
 
                 {/* Info Card */}
-                <div className="absolute bottom-6 left-6 right-6 bg-white p-6 rounded-3xl shadow-lg transform group-hover:-translate-y-2 transition-transform duration-300">
+                <div className="absolute bottom-6 left-6 right-6 bg-card p-6 rounded-3xl shadow-lg transform group-hover:-translate-y-2 transition-transform duration-300">
                   <div className="flex justify-between items-start">
                     <div>
                       <h3 className="text-xl font-bold text-heading">
@@ -115,7 +115,7 @@ export default function Instructors() {
                         {instructor.role}
                       </p>
                     </div>
-                    <button className="text-gray-300 hover:text-secondary transition-colors">
+                    <button className="text-muted-foreground/60 hover:text-secondary transition-colors">
                       <Share2 size={18} />
                     </button>
                   </div>
