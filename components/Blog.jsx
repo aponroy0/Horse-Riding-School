@@ -76,12 +76,12 @@ export default function Blog() {
     hidden: {
       opacity: 0,
       x: shouldReduceMotion ? 0 : 34,
-      clipPath: shouldReduceMotion ? "inset(0 0 0 0)" : "inset(0 0 0 100%)",
+      scale: shouldReduceMotion ? 1 : 0.95,
     },
     show: {
       opacity: 1,
       x: 0,
-      clipPath: "inset(0 0 0 0)",
+      scale: 1,
       transition: {
         duration: shouldReduceMotion ? 0.18 : 0.85,
         ease: [0.16, 1, 0.3, 1],
